@@ -13,4 +13,9 @@ class TodosController < ApplicationController
     )
     render :show
   end
+
+  def show
+    @todo = Todo.find_by(id: params[:id])
+    render :show
+  end
 end
