@@ -3,4 +3,11 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     render :index
   end
+
+  def create
+    @category = Category.create(
+      name: params[:name],
+    )
+    render :show
+  end
 end

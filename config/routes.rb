@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   delete "/todos/:id" => "todos#destroy"
 
   get "/categories" => "categories#index"
+  post "/categories" => "categories#create"
 end
