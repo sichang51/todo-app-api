@@ -38,4 +38,3 @@ class TodosController < ApplicationController
 end
 
 
-  FINISHED TODO, START API WORK ON CATEGORY AND CATEGORYTODO
