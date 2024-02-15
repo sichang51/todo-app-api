@@ -36,3 +36,6 @@ class TodosController < ApplicationController
     render json: { message: "Todo destroyed successfully" }
   end
 end
+
+
+  FINISHED TODO, START API WORK ON CATEGORY AND CATEGORYTODO
