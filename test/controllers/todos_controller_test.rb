@@ -21,7 +21,7 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["id", "title", "description", "deadline", "completed", "created_at", "updated_at"], data.keys
+    assert_equal ["id", "title", "description", "deadline", "completed", "created_at", "updated_at", "category_id"], data.keys
   end
 
   test "update" do
