@@ -10,13 +10,14 @@ class TodosController < ApplicationController
       description: params[:description],
       deadline: params[:deadline],
       completed: params[:completed],
+      category_id: params[:category_id],
     )
     render :show
   end
 
   def show
     @todo = Todo.find_by(id: params[:id])
-    render :show
+    render template: "todos/show"
   end
 
   def update
@@ -26,6 +27,7 @@ class TodosController < ApplicationController
       description: params[:description] || @todo.description,
       deadline: params[:deadline] || @todo.deadline,
       completed: params[:completed] || @todo.completed,
+      category_id: params[:category_id] || @todo.id,
     )
     render :show
   end
@@ -36,5 +38,3 @@ class TodosController < ApplicationController
     render json: { message: "Todo destroyed successfully" }
   end
 end
-
-
