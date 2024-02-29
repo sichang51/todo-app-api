@@ -7,4 +7,4 @@ json.created_at todo.created_at
 json.updated_at todo.updated_at
 json.user_id todo.user_id
 json.category_id todo.category_id
-json.category_name todo.category_name
+
