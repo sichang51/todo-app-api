@@ -11,7 +11,7 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Todo.count", 1 do
-      post "/todos.json", params: { title: "test title", description: "test description", deadline: "02/15/2024", completed: "completed", category_id: Category.first.id }
+      post "/todos.json", params: { title: "test title", description: "test description", deadline: "02/15/2024", completed: "completed", category_id: Category.first.id, category_name: Category.first.name }
       assert_response 200
     end
   end
@@ -21,7 +21,7 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["id", "title", "description", "deadline", "completed", "created_at", "updated_at", "category_id"], data.keys
+    assert_equal ["id", "title", "description", "deadline", "completed", "created_at", "updated_at", "user_id", "category_id", "category_name"], data.keys
   end
 
   test "update" do

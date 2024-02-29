@@ -11,6 +11,7 @@ class TodosController < ApplicationController
       deadline: params[:deadline],
       completed: params[:completed],
       category_id: params[:category_id],
+      category_name: params[:category_name],
     )
     render :show
   end
@@ -28,6 +29,7 @@ class TodosController < ApplicationController
       deadline: params[:deadline] || @todo.deadline,
       completed: params[:completed] || @todo.completed,
       category_id: params[:category_id] || @todo.category_id,
+      category_name: params[:category_name] || @todo.category_name,
     )
     render :show
   end
