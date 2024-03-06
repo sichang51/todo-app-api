@@ -1,3 +1,5 @@
+require "pry"
+
 class TodosController < ApplicationController
   def index
     @todos = Todo.all
@@ -16,12 +18,12 @@ class TodosController < ApplicationController
   end
 
   def show
-    @todo = Todo.find_by(id: params[:id])
+    @todo = Todo.find_by(category_id: params[:id])
     render template: "todos/show"
   end
 
   def update
-    @todo = Todo.find_by(id: params[:id])
+    @todo = Todo.find_by(category_id: params[:id])
     @todo.update(
       title: params[:title] || @todo.title,
       description: params[:description] || @todo.description,
@@ -33,7 +35,7 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    @todo = Todo.find_by(id: params[:id])
+    @todo = Todo.find_by(category_id: params[:id])
     @todo.destroy
     render json: { message: "Todo destroyed successfully" }
   end
